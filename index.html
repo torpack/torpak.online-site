@@ -1,1 +1,123 @@
-<div>sa</div>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #152e3f, #0d193d, #152e3f, #0d193d);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .glass-container {
+            background: rgba(255, 255, 255, 0.1); /* Cam efektini elde etmek için saydamlık */
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            backdrop-filter: blur(10px); /* Arka planı bulanıklaştırır */
+            scale: 67%;
+
+        }
+
+        .container {
+            padding: 30px;
+            text-align: center;
+            
+        }
+
+        img {
+            border-radius: 50%;
+            max-width: 120px;
+            border: 4px solid #3498db;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        h1 {
+            color: #3498db;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #bdc3c7; /* Gri tonu */
+            line-height: 1.6;
+            font-size: 1.2em;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #bdc3c7; /* Gri tonu */
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .social-icons a:hover {
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+
+<div class="glass-container">
+    <div class="container">
+        <img src="https://cdn.discordapp.com/avatars/330292439040393216/e4b4d1e60d0e49c6257084d16994fdc5.png" alt="Profil Resmi">
+        <h1>Toprak - Nexus Dev</h1>
+        <p>Merhaba, ben Toprak. Hem Front-end hem de Back-end geliştirme konusunda uzmanlaşmış bir yazılım geliştiriciyim. Sektördeki deneyimim ve çok sayıda dildeki yeteneklerimle geniş bir teknoloji yelpazesinde projeler üretebiliyorum.</p>
+        <p>Yaklaşık olarak 10'a yakın programlama dilini etkin bir şekilde kullanabiliyorum. Bu diller arasında Lua, JavaScript, HTML, CSS gibi teknolojiler bulunmaktadır. Geniş dil yelpazem, farklı platformlarda ve projelerde çözümler üretebilmeme olanak tanıyor.</p>
+        <p>Ülkemiz Türkiye'de yaşıyorum ve yazılım dünyasındaki gelişmeleri yakından takip ediyorum. Özellikle Fivem piyasasında aktif olarak yer alıyor ve çeşitli içerikler üretiyorum. Fivem, Grand Theft Auto V (GTA V) oyununun çok oyunculu modu için geliştirilmiş bir platformdur. Bu alandaki deneyimim ve yeteneklerimle birlikte, Fivem topluluğuna katkı sağlayarak çeşitli scriptler geliştiriyorum.</p>
+        <p>Ayrıca, Nexus Dev ekibinin iki kurucusundan biriyim. Nexus Dev, geniş bir oyuncu kitlesine hitap eden projeler üreten bir yazılım geliştirme ekibidir. Nexus Dev projelerinde aktif olarak yer alarak, ekibimle birlikte çeşitli scriptler ve çözümler üretiyoruz.</p>
+        <p>Yazılım dünyasındaki sürekli değişim ve gelişim beni motive ediyor. Her geçen gün yeni şeyler öğrenmek ve bu bilgileri pratiğe dökmek benim için heyecan verici bir süreç. Bu süreç
+        <div class="social-icons">
+            <a href="https://discord.gg/j87NTfVGQX" target="_blank"><i class="fab fa-discord"></i></a>
+            <a href="https://github.com/torpack" target="_blank"><i class="fab fa-github"></i></a>
+            <!-- Diğer sosyal medya ikonlarını ekleyebilirsiniz -->
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
