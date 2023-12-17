@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +19,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            transition: background 1s;
         }
 
         @keyframes gradient {
@@ -33,22 +35,20 @@
         }
 
         .glass-container {
-            background: rgba(255, 255, 255, 0.1); 
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             overflow: hidden;
             position: relative;
             width: 80%;
             max-width: 600px;
-            backdrop-filter: blur(10px); 
+            backdrop-filter: blur(10px);
             scale: 67%;
             transition: 1s;
-
         }
 
         .container {
             padding: 30px;
             text-align: center;
-            
         }
 
         .glass-container:hover {
@@ -76,7 +76,7 @@
         }
 
         p {
-            color: #bdc3c7; 
+            color: #bdc3c7;
             line-height: 1.6;
             font-size: 1.2em;
         }
@@ -105,25 +105,130 @@
         .social-icons a:hover {
             color: #3498db;
         }
+
+        .language-switch {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            left: 15px;
+            top: 10px;
+            transform: scale(1.4);
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+
+        .switch-input {
+            display: none;
+        }
+
+        .switch-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #cccccc98;
+            transition: background-color 0.4s;
+            border-radius: 20px;
+        }
+
+        .switch-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: transform 0.4s;
+    border-radius: 50%;
+    background-image: url('https://cdn.discordapp.com/attachments/1138554146635657287/1185878169560023060/turkey.png?ex=6591361c&is=657ec11c&hm=24548c0cab8f5795f304dd8da37d8bf98682de0ec7f9d6dccea208dc0eb9ac31&'); /* Türk bayrağı görüntüsünün URL'sini ekleyin */
+    background-size: cover; 
+    }
+    
+    html[lang="en"] .switch-slider:before {
+        background-image: url('https://cdn.discordapp.com/attachments/1138554146635657287/1185878169341931612/512px-United-kingdom_flag_icon_round.svg.png?ex=6591361c&is=657ec11c&hm=06cf8385fb336537ccc5631b44e3f2a2471ad04a0fd7340cec24632a06bbb9ca&'); /* İngiliz bayrağı görüntüsünün URL'sini ekleyin */
+    }
+
+
+        .switch-input:checked+.switch-slider:before {
+            transform: translateX(20px);
+        }
+
+        .switch-label {
+            color: #bdc3c7;
+            cursor: pointer;
+        }
+
+        .switch-label:hover {
+            color: #3498db;
+        }
     </style>
+    <div class="language-switch">
+        <label class="switch">
+            <input type="checkbox" class="switch-input" onclick="toggleLanguage()">
+            <span class="switch-slider"></span>
+        </label>
+        <span class="switch-label" id="switch-label-tr" onclick="toggleLanguage('en')"></span>
+        <span class="switch-label" id="switch-label-en" onclick="toggleLanguage('tr')"></span>
+    </div>
 </head>
+
+
 <body>
 
-<div class="glass-container">
-    <div class="container">
-        <img src="https://cdn.discordapp.com/avatars/330292439040393216/e4b4d1e60d0e49c6257084d16994fdc5.png" alt="Profil Resmi">
-        <h1>Toprak - Nexus Dev</h1>
-        <p>Merhaba, ben Toprak. Hem Front-end hem de Back-end geliştirme konusunda uzmanlaşmış bir yazılım geliştiriciyim. Sektördeki deneyimim ve çok sayıda dildeki yeteneklerimle geniş bir teknoloji yelpazesinde projeler üretebiliyorum.</p>
-        <p>Yaklaşık olarak 10'a yakın programlama dilini etkin bir şekilde kullanabiliyorum. Bu diller arasında Lua, JavaScript, HTML, CSS gibi teknolojiler bulunmaktadır. Geniş dil yelpazem, farklı platformlarda ve projelerde çözümler üretebilmeme olanak tanıyor.</p>
-        <p>Ülkemiz Türkiye'de yaşıyorum ve yazılım dünyasındaki gelişmeleri yakından takip ediyorum. Özellikle Fivem piyasasında aktif olarak yer alıyor ve çeşitli içerikler üretiyorum. Fivem, Grand Theft Auto V (GTA V) oyununun çok oyunculu modu için geliştirilmiş bir platformdur. Bu alandaki deneyimim ve yeteneklerimle birlikte, Fivem topluluğuna katkı sağlayarak çeşitli scriptler geliştiriyorum.</p>
-        <p>Ayrıca, Nexus Dev ekibinin iki kurucusundan biriyim. Nexus Dev, geniş bir oyuncu kitlesine hitap eden projeler üreten bir yazılım geliştirme ekibidir. Nexus Dev projelerinde aktif olarak yer alarak, ekibimle birlikte çeşitli scriptler ve çözümler üretiyoruz.</p>
-        <p>Yazılım dünyasındaki sürekli değişim ve gelişim beni motive ediyor. Her geçen gün yeni şeyler öğrenmek ve bu bilgileri pratiğe dökmek benim için heyecan verici bir süreç. Bu süreçte teknolojinin sunduğu olanakları en iyi şekilde değerlendirerek, katkı sağlamaya ve projeler üretmeye devam ediyorum.</p>
-        <div class="social-icons">
-            <a href="https://discord.gg/j87NTfVGQX" target="_blank"><i class="fab fa-discord"></i></a>
-            <a href="https://github.com/torpack" target="_blank"><i class="fab fa-github"></i></a>
+    
+
+    <div class="glass-container">
+        <div class="container">
+            <img src="https://cdn.discordapp.com/avatars/330292439040393216/e4b4d1e60d0e49c6257084d16994fdc5.png" alt="Profil Resmi">
+            <h1>Torpak - Nexus Dev</h1>
+            <p id="intro-tr" style="display:none;">Merhaba, ben Toprak. Hem Front-end hem de Back-end geliştirme konusunda uzmanlaşmış bir yazılım geliştiriciyim. Sektördeki deneyimim ve çok sayıda dildeki yeteneklerimle geniş bir teknoloji yelpazesinde projeler üretebiliyorum.</p>
+            <p id="intro-en">Hello, I'm Toprak. I'm a software developer specialized in both Front-end and Back-end development. With my experience in the industry and proficiency in various languages, I can create projects across a wide range of technologies.</p>
+            <p id="languages-tr" style="display:none;">Yaklaşık olarak 10'a yakın programlama dilini etkin bir şekilde kullanabiliyorum. Bu diller arasında Lua, JavaScript, HTML, CSS gibi teknolojiler bulunmaktadır. Geniş dil yelpazem, farklı platformlarda ve projelerde çözümler üretebilmeme olanak tanıyor.</p>
+            <p id="languages-en">I can effectively use around 10 programming languages, including Lua, JavaScript, HTML, CSS, and more. My broad language spectrum allows me to create solutions across different platforms and projects.</p>
+            <p id="location-tr" style="display:none;">Ülkemiz Türkiye'de yaşıyorum ve yazılım dünyasındaki gelişmeleri yakından takip ediyorum. Özellikle Fivem piyasasında aktif olarak yer alıyor ve çeşitli içerikler üretiyorum. Fivem, Grand Theft Auto V (GTA V) oyununun çok oyunculu modu için geliştirilmiş bir platformdur. Bu alandaki deneyimim ve yeteneklerimle birlikte, Fivem topluluğuna katkı sağlayarak çeşitli scriptler geliştiriyorum.</p>
+            <p id="location-en">I live in Turkey and closely follow developments in the software world. I am actively involved in the Fivem market, producing various content. Fivem is a platform developed for the multiplayer mode of Grand Theft Auto V (GTA V). With my experience and skills in this field, I contribute to the Fivem community by developing various scripts.</p>
+            <p id="nexus-tr" style="display:none;">Ayrıca, Nexus Dev ekibinin iki kurucusundan biriyim. Nexus Dev, geniş bir oyuncu kitlesine hitap eden projeler üreten bir yazılım geliştirme ekibidir. Nexus Dev projelerinde aktif olarak yer alarak, ekibimle birlikte çeşitli scriptler ve çözümler üretiyoruz.</p>
+            <p id="nexus-en">I am also one of the co-founders of the Nexus Dev team. Nexus Dev is a software development team that creates projects for a wide range of players. Actively participating in Nexus Dev projects, my team and I produce various scripts and solutions.</p>
+            <p id="motivation-tr" style="display:none;">Yazılım dünyasındaki sürekli değişim ve gelişim beni motive ediyor. Her geçen gün yeni şeyler öğrenmek ve bu bilgileri pratiğe dökmek benim için heyecan verici bir süreç. Bu süreçte teknolojinin sunduğu olanakları en iyi şekilde değerlendirerek, katkı sağlamaya ve projeler üretmeye devam ediyorum.</p>
+            <p id="motivation-en">The continuous change and development in the software world motivate me. Learning new things every day and putting that knowledge into practice is an exciting process for me. In this process, I continue to contribute and create projects by making the best use of the opportunities offered by technology.</p>
+            <div class="social-icons">
+                <a href="https://discord.gg/j87NTfVGQX" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="https://github.com/torpack" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
         </div>
     </div>
-</div>
+
+    <script>
+        function toggleLanguage(lang) {
+            if (!lang) {
+                lang = document.documentElement.lang === "tr" ? "en" : "tr";
+            }
+    
+            document.documentElement.lang = lang;
+    
+            var elementsTr = document.querySelectorAll('[id$="-tr"]');
+            var elementsEn = document.querySelectorAll('[id$="-en"]');
+    
+            elementsTr.forEach(function (element) {
+                element.style.display = lang === "tr" ? "block" : "none";
+            });
+    
+            elementsEn.forEach(function (element) {
+                element.style.display = lang === "en" ? "block" : "none";
+            });
+        }
+    </script>
 
 </body>
+
 </html>
