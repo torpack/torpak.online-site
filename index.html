@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Torpak</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -45,6 +46,14 @@
             scale: 67%;
             transition: 1s;
         }
+        @media (max-width: 767px) {
+    /* Ekran genişliği 767 pikselden küçükse (telefon boyutu) */
+    .glass-container {
+        scale: 60%;
+        min-width: 600px;
+
+    }
+}
 
         .container {
             padding: 30px;
@@ -180,6 +189,7 @@
         <span class="switch-label" id="switch-label-tr" onclick="toggleLanguage('en')"></span>
         <span class="switch-label" id="switch-label-en" onclick="toggleLanguage('tr')"></span>
     </div>
+    <audio id="audioPlayer" controls style="display: none;"></audio>
 </head>
 
 
@@ -227,6 +237,7 @@
                 element.style.display = lang === "en" ? "block" : "none";
             });
         }
+
     </script>
 
 </body>
